@@ -26,8 +26,7 @@
             text-align: center;
         }
 
-        .carousel,
-        .video-container {
+        .carousel {
             width: 90%;
             max-width: 600px;
             position: relative;
@@ -73,19 +72,6 @@
             }
         }
 
-        /* .text-container {
-            position: absolute;
-            top: 0;
-            left: -200px;
-            width: 200px;
-            padding: 20px;
-            font-size: 1.2em;
-            color: #f64983;
-            background-color: rgba(255, 230, 242, 0.8);
-            border-radius: 10px;
-            animation: slideIn 2s forwards;
-        } */
-
         .heart-container {
             position: absolute;
             width: 100%;
@@ -114,28 +100,19 @@
             }
         }
 
-        @keyframes slideIn {
-            from {
-                left: -200px;
-            }
-
-            to {
-                left: 20px;
-            }
-        }
-               /* 媒体查询，用于调整手机端的布局 */
+        /* 媒体查询，用于调整手机端的布局 */
         @media (max-width: 768px) {
-            .carousel, .video-container {
+            .carousel {
                 width: 100%;
                 max-width: none;
             }
 
             .blessing {
                 left: 5%;
-                bottom: 5%; /* 在手机端将祝福文字稍微上移 */
+                bottom: 5%;
                 transform: translateY(-50%);
-                width: 90%; /* 调整宽度以适应容器 */
-                font-size: 1em; /* 减小字体大小 */
+                width: 90%;
+                font-size: 1em;
                 text-align: left;
                 opacity: 0;
                 animation: fadeInText 5s ease-in forwards;
@@ -196,19 +173,6 @@
         <img src="happy (34).jpg">
         <img src="happy (35).jpg">
     </div>
-    <div class="text-container" id="blessing-text"></div>
-    <!-- 视频展示
-    <div class="video-container">
-        <video controls>
-            <source src="video (2).mp4" type="video/mp4">
-        </video>
-        <video controls>
-            <source src="video (3).mp4" type="video/mp4">
-        </video>
-        <video controls>
-            <source src="video (4).mp4" type="video/mp4">
-        </video>
-    </div> -->
 
     <script>
         // 自动轮播照片
@@ -218,8 +182,13 @@
             images[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % images.length;
             images[currentIndex].classList.add('active');
-        }, 1000); // 每1秒切换一张照片
+        }, 1000);
     </script>
+
+    <!-- 添加音乐 -->
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 </body>
 
 </html>
