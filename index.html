@@ -50,8 +50,8 @@
 
         .blessing {
             position: absolute;
-            left: 20%;
-            bottom: -10%;
+            left: 5%;
+            bottom: 10%;
             transform: translateY(-50%);
             width: 90%;
             font-size: 1.2em;
@@ -121,6 +121,26 @@
 
             to {
                 left: 20px;
+            }
+        }
+               /* 媒体查询，用于调整手机端的布局 */
+        @media (max-width: 768px) {
+            .carousel, .video-container {
+                width: 100%;
+                max-width: none;
+            }
+
+            .blessing {
+                left: 5%;
+                bottom: 5%; /* 在手机端将祝福文字稍微上移 */
+                transform: translateY(-50%);
+                width: 90%; /* 调整宽度以适应容器 */
+                font-size: 1em; /* 减小字体大小 */
+                text-align: left;
+                opacity: 0;
+                animation: fadeInText 5s ease-in forwards;
+                line-height: 1.5;
+                font-weight: bold;
             }
         }
     </style>
